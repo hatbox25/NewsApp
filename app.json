@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "News App",
+    "icon": "",
+    "version": "1.0.0",
+    "slug": "newsapp",
+    "sdkVersion": "19.0.0",
+    "ios": {
+      "bundleIdentifier": "com.tokopedia.newsapp"
+    },
+    "android": {
+      "package": "com.tokopedia.newsapp"
+    }
+  }
+}
