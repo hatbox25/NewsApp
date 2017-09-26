@@ -19,16 +19,12 @@ const styles =  StyleSheet.create({
     header:{
         backgroundColor:'#424242',
         paddingTop:22,
+        width:'100%',
         paddingBottom:8
-    },
-    title_header:{
-        color:'#fff',
-        fontSize:14,
     },
     row:{
         padding:15,
         backgroundColor:'#F6F8F9',
-        borderRadius:5,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -51,6 +47,16 @@ const styles =  StyleSheet.create({
         fontWeight:'500',
         color:'#fff',
         fontSize:16,
+    },
+    webview:{
+        width:'100%',
+        height:responsiveHeight(100),
+    },
+    btntransparent:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection:'column',
+        marginTop:15
     }
 });
 

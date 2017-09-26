@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "News App",
+    "name": "Hobbs News",
     "icon": "./assets/img/icon-app-512.png",
     "version": "1.0.0",
-    "slug": "newsapp",
+    "slug": "hobbsnews",
     "sdkVersion": "19.0.0",
     "orientation": "portrait",
     "loading": {
@@ -12,10 +12,10 @@
       "hideExponentText": true
     },
     "ios": {
-      "bundleIdentifier": "com.tokopedia.newsapp"
+      "bundleIdentifier": "com.tokopedia.hobbsnews"
     },
     "android": {
-      "package": "com.tokopedia.newsapp"
+      "package": "com.tokopedia.hobbsnews"
     }
   }
 }

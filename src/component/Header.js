@@ -11,6 +11,7 @@ import {
     Button,
     Icon
 } from 'native-base';
+import {NavigationActions} from 'react-navigation';
 import styles from '../../assets/styles';
 export default class CompHeader extends React.Component{
     constructor(props) {
@@ -21,8 +22,28 @@ export default class CompHeader extends React.Component{
         const {props} = this;
         if(props.back){
             return (
-                <Button style={{marginLeft:-10,paddingRight:0}} transparent onPress={() => props.navigation.goBack()}>
-                    <Icon style={{color:'#fff'}} name="arrow-back"/>
+                <Button style={{marginLeft:-20}} transparent onPress={() => props.navigation.goBack()}>
+                    <Icon style={{color:'#fff',textAlign:'left',}} name="arrow-back"/>
+                </Button>
+            );
+        }
+    }
+
+    showHome(){
+        const {props} = this;
+        if(props.home){
+            return (
+                <Button style={{paddingRight:0}} transparent onPress={() => props
+                                                            .navigation
+                                                            .dispatch(NavigationActions.reset(
+                                                                {
+                                                                    index:0,
+                                                                    actions:[
+                                                                        NavigationActions.navigate({routeName:'Home'})
+                                                                    ]
+                                                                }
+                                                            ))}>
+                    <Icon style={{color:'#fff'}} name="home"/>
                 </Button>
             );
         }
@@ -47,7 +68,7 @@ export default class CompHeader extends React.Component{
                     </Col>
                     <Col size={10}  style={{justifyContent: 'center'}}>
                         <View>
-                            
+                            {this.showHome()}
                         </View>
                     </Col>
                 </Row>

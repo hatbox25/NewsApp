@@ -61,7 +61,7 @@ export default class ListSourceScreen extends React.Component {
                 <List
                     dataArray={this.state.listSource}
                     renderRow={(item) =>
-                    <ListItem style={{borderBottomWidth:0,margin : 2}}
+                    <ListItem style={{backgroundColor:'#6d6d6d',borderBottomWidth:0,margin : 2}}
                         button={true}
                         onPress={()=>{
                             this.props.navigation.navigate('Article',{source:item.id,sourceName:item.name});
@@ -91,7 +91,7 @@ export default class ListSourceScreen extends React.Component {
         return (
             <Container style={styles.container}>
                 <CompHeader title={"Sources list for category "+params.category} {...this.props} back="true"/>
-                <Content>
+                <Content style={{backgroundColor:'#6d6d6d'}}>
                     {this.renderList()}
                 </Content>
             </Container>

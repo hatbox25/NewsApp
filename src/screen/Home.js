@@ -19,11 +19,19 @@ import {
     Left,
     Icon
 } from 'native-base';
+import Spinner from '../component/Spinner';
 import CompHeader from '../component/Header';
 import styles from '../../assets/styles';
 export default class HomeScreen extends React.Component {
     constructor(props){
         super(props);
+        this.state={
+            loading:true
+        }
+    }
+
+    componentWillMount(){
+        this.setState({loading:false});
     }
 
     gotoPage(page) {
@@ -34,10 +42,11 @@ export default class HomeScreen extends React.Component {
 
 
     render() {
+        if(this.state.loading) return <Spinner />;
         return (
             <Container style={styles.container}>
-                <CompHeader title="My Hoby's News" {...this.props}/>
-                <Content>
+                <CompHeader title="Hobbs News" {...this.props}/>
+                <Content style={{backgroundColor:'#6d6d6d'}}>
                     <Row style={styles.row}>
                         <Text>Select Category That You Desired !</Text>
                     </Row>
@@ -64,7 +73,7 @@ export default class HomeScreen extends React.Component {
                             </TouchableOpacity>
                         </Col>
                         <Col>
-                            <TouchableOpacity onPress={() => {Alert.alert('hi');}}>
+                            <TouchableOpacity onPress={() => {this.gotoPage('gaming')}}>
                                 <Card>
                                     <CardItem header>
                                         <Left>
@@ -87,7 +96,7 @@ export default class HomeScreen extends React.Component {
                     </Row>
                     <Row>
                         <Col>
-                            <TouchableOpacity onPress={() => {Alert.alert('hi');}}>
+                            <TouchableOpacity onPress={() => {this.gotoPage('music')}}>
                                 <Card>
                                     <CardItem header>
                                         <Left>
@@ -108,7 +117,7 @@ export default class HomeScreen extends React.Component {
                             </TouchableOpacity>
                         </Col>
                         <Col>
-                            <TouchableOpacity onPress={() => {Alert.alert('hi');}}>
+                            <TouchableOpacity onPress={() => {this.gotoPage('science-and-nature')}}>
                                 <Card>
                                     <CardItem header>
                                         <Left>

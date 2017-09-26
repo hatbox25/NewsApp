@@ -57,13 +57,13 @@ export default class ListArticlesScreen extends React.Component {
             const listArticle = resp.data.articles;
             const Articles = [];
             listArticle.forEach((item) => {
-                if(item.urlToImage == null){
+                if(item.urlToImage == null || item.urlToImage == ''){
                     item.urlToImage = 'http://saveabandonedbabies.org/wp-content/uploads/2015/08/default.png';
                 }
-                if(item.publishedAt == null){
+                if(item.publishedAt == null || item.publishedAt == ''){
                     item.publishedAt = 'no date'
                 }
-                if(item.author == null){
+                if(item.author == null || item.author == ''){
                     item.author = 'no author'
                 }
                 if(item.url == null){
@@ -132,7 +132,12 @@ export default class ListArticlesScreen extends React.Component {
                                                 </Row>
                                             </Col>
                                             <Col size={30} style={{backgroundColor:'rgba(0, 0, 0, 0.3)',height:70}}>
-                                                <Button transparent style={{justifyContent: 'center',alignItems: 'center',flexDirection:'column',marginTop:15}}>
+                                                <Button transparent
+                                                        style={styles.btntransparent}
+                                                        onPress={()=>{
+                                                            this.props.navigation.navigate('View',{title:item.title,url:item.url})
+                                                        }}
+                                                        >
                                                     <Icon name="paper" style={{color:'#fff'}}/>
                                                     <Text style={{color:'#fff',fontSize:10}}>Read more</Text>
                                                 </Button>
