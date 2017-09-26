@@ -1,10 +1,16 @@
 {
   "expo": {
     "name": "News App",
-    "icon": "",
+    "icon": "./assets/img/icon-app-512.png",
     "version": "1.0.0",
     "slug": "newsapp",
     "sdkVersion": "19.0.0",
+    "orientation": "portrait",
+    "loading": {
+      "icon": "./assets/img/icon-app-512.png",
+      "backgroundImage": "",
+      "hideExponentText": true
+    },
     "ios": {
       "bundleIdentifier": "com.tokopedia.newsapp"
     },

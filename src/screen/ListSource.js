@@ -15,14 +15,16 @@ import {
     CardItem,
     Row
 } from 'native-base';
+import Spinner from '../component/Spinner';
 import CompHeader from '../component/Header';
-import styles from '../../asset/styles';
+import styles from '../../assets/styles';
 import axios from 'axios';
 export default class ListSourceScreen extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            listSource:[]
+            listSource:[],
+            loading:true
         }
     }
 
@@ -40,7 +42,7 @@ export default class ListSourceScreen extends React.Component {
         }).then(resp => {
             const listSource = resp.data.sources;
             this.setState({listSource});
-
+            this.setState({loading:false});
         }).catch(function (error) {
             console.log(error);
             Alert.alert("Request Time Out");
@@ -61,13 +63,16 @@ export default class ListSourceScreen extends React.Component {
                     renderRow={(item) =>
                     <ListItem style={{borderBottomWidth:0,margin : 2}}
                         button={true}
+                        onPress={()=>{
+                            this.props.navigation.navigate('Article',{source:item.id,sourceName:item.name});
+                        }}
                         >
                         <Row>
                             <Card>
-                                <CardItem header>
-                                    <Text>{item.name}</Text>
+                                <CardItem header style={{backgroundColor:'#1b1b1b'}}>
+                                    <Text style={{color:'#fff'}}>{item.name}</Text>
                                 </CardItem>
-                                <CardItem cardBody style={{margin:3}}>
+                                <CardItem cardBody style={{margin:10}}>
                                     <Text>{this.truncateStr(item.description)}</Text>
                                 </CardItem>
                             </Card>
@@ -82,6 +87,7 @@ export default class ListSourceScreen extends React.Component {
 
     render() {
         const {params} = this.props.navigation.state;
+        if(this.state.loading) return <Spinner />;
         return (
             <Container style={styles.container}>
                 <CompHeader title={"Sources list for category "+params.category} {...this.props} back="true"/>

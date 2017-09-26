@@ -19,10 +19,11 @@ const styles =  StyleSheet.create({
     header:{
         backgroundColor:'#424242',
         paddingTop:22,
+        paddingBottom:8
     },
     title_header:{
         color:'#fff',
-        fontSize:16,
+        fontSize:14,
     },
     row:{
         padding:15,
@@ -38,6 +39,18 @@ const styles =  StyleSheet.create({
         alignSelf:'center',
         marginTop:-15,
         margin:8
+    },
+    artcimg:{
+        flex:1,
+        width:'100%',
+        height:responsiveHeight(40),
+        alignSelf:'center',
+    },
+    title_header:{
+        textAlign:'center',
+        fontWeight:'500',
+        color:'#fff',
+        fontSize:16,
     }
 });
 

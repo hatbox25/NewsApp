@@ -20,7 +20,7 @@ import {
     Icon
 } from 'native-base';
 import CompHeader from '../component/Header';
-import styles from '../../asset/styles';
+import styles from '../../assets/styles';
 export default class HomeScreen extends React.Component {
     constructor(props){
         super(props);

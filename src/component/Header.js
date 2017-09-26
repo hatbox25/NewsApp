@@ -11,7 +11,7 @@ import {
     Button,
     Icon
 } from 'native-base';
-import styles from '../../asset/styles';
+import styles from '../../assets/styles';
 export default class CompHeader extends React.Component{
     constructor(props) {
         super(props);
