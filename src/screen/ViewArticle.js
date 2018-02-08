@@ -28,7 +28,7 @@ export default class ViewArticleScreen extends React.Component {
         const {params} = this.props.navigation.state;
         return (
             <Container style={styles.container}>
-                <CompHeader title={params.title} {...this.props} back="true" home="true"/>
+                <CompHeader title={params.title} {...this.props} back="true"/>
                 <Content>
                     <WebView
                         source={{uri: params.url}}
