@@ -1,5 +1,4 @@
 import React from 'react';
-import Expo from 'expo';
 
 import AppNavigator from './src/AppNavigator';
 
@@ -13,12 +12,6 @@ export default class App extends React.Component {
     }
 
     async componentWillMount() {
-        await Expo.Font.loadAsync({
-            'Roboto': require('native-base/Fonts/Roboto.ttf'),
-            'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
-            'Ionicons': require("native-base/Fonts/Ionicons.ttf")
-        });
-        this.setState({fontsAreLoaded: true});
 
         // To see all the requests in the chrome Dev tools in the network tab.
         XMLHttpRequest = GLOBAL.originalXMLHttpRequest ?
@@ -36,9 +29,6 @@ export default class App extends React.Component {
     }
 
     render() {
-        if (!this.state.fontsAreLoaded) {
-            return <Expo.AppLoading/>
-        }
         return <AppNavigator/>;
     }
 }

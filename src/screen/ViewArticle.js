@@ -26,7 +26,6 @@ export default class ViewArticleScreen extends React.Component {
 
     render() {
         const {params} = this.props.navigation.state;
-        if(this.state.loading) return <Spinner />;
         return (
             <Container style={styles.container}>
                 <CompHeader title={params.title} {...this.props} back="true" home="true"/>
@@ -34,7 +33,7 @@ export default class ViewArticleScreen extends React.Component {
                     <WebView
                         source={{uri: params.url}}
                         style={styles.webview}
-                        renderLoading={()=>{return <Spinner />}}
+                        // renderLoading={()=>{return <Spinner />}}
                         startInLoadingState
                     />
                 </Content>

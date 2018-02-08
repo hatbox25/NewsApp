@@ -17,5 +17,7 @@
     "android": {
       "package": "com.tokopedia.hobbsnews"
     }
-  }
+  },
+  "name": "HobbsNews",
+  "displayName": "Hobbs News"
 }
